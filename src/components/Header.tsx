@@ -122,7 +122,7 @@ const Header: React.FC = () => {
                 <img
                   src="/logoF.png"
                   alt="TokenLaunch"
-                  className="h-8 w-auto hover:opacity-80 transition-opacity duration-300"
+                  className="h-10 w-auto hover:opacity-80 transition-opacity duration-300"
                 />
               </a>
             </div>
