@@ -612,7 +612,7 @@ const DexIndexPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">
-                Live Data Powered by Dexscreener
+                Live Data based on current DEX prices
               </h3>
               <p className="text-slate-600 dark:text-slate-300 text-sm">
                 Real-time cryptocurrency prices and market data. Data refreshes automatically every few minutes.
