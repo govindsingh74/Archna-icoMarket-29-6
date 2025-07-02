@@ -95,36 +95,25 @@ const DexIndexPage: React.FC = () => {
 
   const fetchDexData = async (token: TokenData) => {
     try {
-      // Map network names to Dexscreener format
-      const networkMap: Record<string, string> = {
-        'Ethereum (ETH)': 'ethereum',
-        'Binance Smart Chain (BSC)': 'bsc',
-        'Polygon (MATIC)': 'polygon',
-        'Solana (SOL)': 'solana',
-        'Avalanche (AVAX)': 'avalanche'
-      };
-
-      const dexNetwork = networkMap[token.network] || 'ethereum';
-      const apiUrl = `https://api.dexscreener.com/latest/dex/pairs/${dexNetwork}/${token.contract_address}`;
-
-      const response = await fetch(apiUrl);
+      const searchUrl = `https://api.dexscreener.com/latest/dex/search?q=${token.contract_address}`;
+      const response = await fetch(searchUrl);
       const data = await response.json();
 
       if (data.pairs && data.pairs.length > 0) {
-        const pair = data.pairs[0]; // Take the first pair
+        const pair = data.pairs[0]; // Choose first match
         const dexData: DexData = {
           priceUsd: pair.priceUsd || '0',
           priceChange: {
             h1: pair.priceChange?.h1 || 0,
             h24: pair.priceChange?.h24 || 0,
-            h7: pair.priceChange?.h7 || 0
+            h7: pair.priceChange?.h7 || 0 // Note: search API may not return `h7`
           },
           marketCap: pair.marketCap || 0,
           volume: {
             h24: pair.volume?.h24 || 0
           },
           pair: {
-            chartImg: pair.chartImg || ''
+            chartImg: pair.info?.imageUrl || ''
           }
         };
 
@@ -134,21 +123,22 @@ const DexIndexPage: React.FC = () => {
             : t
         ));
       } else {
-        setTokens(prev => prev.map(t => 
-          t.id === token.id 
-            ? { ...t, loading: false, error: 'No data available' }
+        setTokens(prev => prev.map(t =>
+          t.id === token.id
+            ? { ...t, loading: false, error: 'No data found' }
             : t
         ));
       }
     } catch (error) {
       console.error(`Error fetching DEX data for ${token.project_symbol}:`, error);
-      setTokens(prev => prev.map(t => 
-        t.id === token.id 
-          ? { ...t, loading: false, error: 'Failed to load' }
+      setTokens(prev => prev.map(t =>
+        t.id === token.id
+          ? { ...t, loading: false, error: 'Fetch failed' }
           : t
       ));
     }
   };
+
 
   const filterTokens = () => {
     let filtered = [...tokens];

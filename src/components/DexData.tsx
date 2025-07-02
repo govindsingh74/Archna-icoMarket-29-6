@@ -1,3 +1,5 @@
+// components/DexData.tsx
+
 import React, { useEffect, useState } from 'react';
 
 interface DexDataProps {
@@ -5,74 +7,83 @@ interface DexDataProps {
   network: string;
 }
 
+interface DexPairData {
+  priceUsd: string;
+  priceChange: {
+    h1: number;
+    h24: number;
+    h7?: number;
+  };
+  marketCap: number;
+  volume: {
+    h24: number;
+  };
+  chartImg: string;
+}
+
 const DexData: React.FC<DexDataProps> = ({ contractAddress, network }) => {
-  const [dexData, setDexData] = useState<any | null>(null);
+  const [dexData, setDexData] = useState<DexPairData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    const fetchDexData = async () => {
+    const fetchData = async () => {
       try {
-        const chain = network.toLowerCase(); // example: "polygon", "bsc", "ethereum"
-        const url = `https://api.dexscreener.com/latest/dex/pairs/${chain}/${contractAddress}`;
-        const res = await fetch(url);
-        const json = await res.json();
-        if (json?.pair) {
-          setDexData(json.pair);
+        const response = await fetch(`https://api.dexscreener.com/latest/dex/search?q=${contractAddress}`);
+        const data = await response.json();
+
+        if (data.pairs && data.pairs.length > 0) {
+          const pair = data.pairs[0];
+
+          const result: DexPairData = {
+            priceUsd: pair.priceUsd,
+            priceChange: {
+              h1: pair.priceChange?.h1 || 0,
+              h24: pair.priceChange?.h24 || 0,
+              h7: pair.priceChange?.h7 || 0,
+            },
+            marketCap: pair.marketCap || 0,
+            volume: {
+              h24: pair.volume?.h24 || 0
+            },
+            chartImg: pair.info?.imageUrl || ''
+          };
+
+          setDexData(result);
         } else {
-          setDexData(null);
+          setError('DEX data not found.');
         }
       } catch (err) {
-        console.error('DexScreener API error:', err);
-        setDexData(null);
+        console.error('Error fetching DEX data:', err);
+        setError('Failed to fetch DEX data.');
       } finally {
         setLoading(false);
       }
     };
 
-    if (contractAddress && network) fetchDexData();
-  }, [contractAddress, network]);
+    fetchData();
+  }, [contractAddress]);
 
-  if (loading) {
-    return <div className="text-slate-500 dark:text-slate-300">Loading DEX data...</div>;
-  }
-
-  if (!dexData) {
-    return <div className="text-red-500 dark:text-red-400 font-medium">No DEX data available</div>;
-  }
+  if (loading) return <div className="text-sm text-slate-500">Loading DEX data...</div>;
+  if (error) return <div className="text-sm text-red-500">{error}</div>;
+  if (!dexData) return null;
 
   return (
-    <div className="space-y-3">
-      <div className="text-xl font-bold text-slate-800 dark:text-white">DEX Market Data</div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-        <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg">
-          <div className="text-slate-500 dark:text-slate-300">Price</div>
-          <div className="font-semibold text-slate-800 dark:text-white">${Number(dexData.priceUsd).toFixed(6)}</div>
-        </div>
-        <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg">
-          <div className="text-slate-500 dark:text-slate-300">24h Volume</div>
-          <div className="font-semibold text-slate-800 dark:text-white">${dexData.volume.h24.toLocaleString()}</div>
-        </div>
-        <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg">
-          <div className="text-slate-500 dark:text-slate-300">Liquidity (USD)</div>
-          <div className="font-semibold text-slate-800 dark:text-white">${dexData.liquidity.usd.toLocaleString()}</div>
-        </div>
-        <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg">
-          <div className="text-slate-500 dark:text-slate-300">FDV</div>
-          <div className="font-semibold text-slate-800 dark:text-white">${dexData.fdv?.toLocaleString() || 'N/A'}</div>
-        </div>
-        <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg">
-          <div className="text-slate-500 dark:text-slate-300">Pair Created</div>
-          <div className="font-semibold text-slate-800 dark:text-white">{new Date(dexData.pairCreatedAt).toLocaleDateString()}</div>
-        </div>
+    <div>
+      <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">
+        DEX Market Data
+      </h3>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-slate-700 dark:text-slate-200">
+        <div><strong>Price:</strong> ${parseFloat(dexData.priceUsd).toFixed(6)}</div>
+        <div><strong>Market Cap:</strong> ${dexData.marketCap.toLocaleString()}</div>
+        <div><strong>24h Volume:</strong> ${dexData.volume.h24.toLocaleString()}</div>
+        <div><strong>1h Change:</strong> {dexData.priceChange.h1.toFixed(2)}%</div>
+        <div><strong>24h Change:</strong> {dexData.priceChange.h24.toFixed(2)}%</div>
+        <div><strong>7d Change:</strong> {dexData.priceChange.h7?.toFixed(2) || '-'}%</div>
       </div>
-      <a 
-        href={dexData.url} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="inline-block mt-2 text-blue-600 dark:text-blue-400 underline"
-      >
-        View on DexScreener ↗
-      </a>
+      {dexData.chartImg && (
+        <img src={dexData.chartImg} alt="7d chart" className="mt-4 max-w-full h-24" />
+      )}
     </div>
   );
 };

@@ -74,7 +74,8 @@ const ProjectDetailPage: React.FC = () => {
         .single();
 
       if (error) throw error;
-      
+
+      console.log("Project data from Supabase:", data); // <-- Add this
       setProject(data);
     } catch (error) {
       console.error('Error fetching project details:', error);
@@ -83,6 +84,7 @@ const ProjectDetailPage: React.FC = () => {
       setLoading(false);
     }
   };
+
 
   const getProjectStatus = () => {
     if (!project) return { status: 'unknown', color: 'bg-gray-500', textColor: 'text-gray-700' };
