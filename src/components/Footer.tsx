@@ -114,21 +114,22 @@ const Footer: React.FC = () => {
           {/* Contact Info */}
           <div className="space-y-6">
             <h3 className="text-lg font-semibold">Contact Us</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+              Have a question or need help? Raise a request and we’ll get back to you.
+            </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-slate-300">support@tokenlaunch.io</span>
+                <span className="text-slate-300">Raise a Request</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-slate-300">+1 (555) 123-4567</span>
+                <span className="text-slate-300">+1 (000) 123-4567</span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-blue-400 mt-1" />
                 <span className="text-slate-300">
-                  123 Blockchain Street<br />
-                  Crypto Valley, CV 12345<br />
-                  United States
+                  Our team is ready to assist you 24/7. Reach out anytime!
                 </span>
               </div>
             </div>

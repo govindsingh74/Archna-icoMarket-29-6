@@ -3,9 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AboutUsSection from '../components/about/AboutUsSection';
 import GoalSection from '../components/about/GoalSection';
-import CostEffectiveSection from '../components/about/CostEffectiveSection';
 import CMCCoinGeckoSection from '../components/about/CMCCoinGeckoSection';
-import MarketingSection from '../components/about/MarketingSection';
 import TeamSection from '../components/about/TeamSection';
 import TestimonialsSection from '../components/about/TestimonialsSection';
 

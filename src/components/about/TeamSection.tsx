@@ -4,30 +4,30 @@ import { Users, MessageCircle, Phone, Mail, Clock, CheckCircle } from 'lucide-re
 const TeamSection: React.FC = () => {
   const teamMembers = [
     {
-      name: "Alex Chen",
+      name: "Daniel Reich",
       role: "CEO & Founder",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Former Goldman Sachs analyst with 10+ years in blockchain and fintech. Led multiple successful token launches.",
+      image: "https://wxyzgmayoanzetyuzwvi.supabase.co/storage/v1/object/sign/avatar/image.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zOWNiMTcwYy04MTc5LTQ0NjgtOTFmNS1iMDVhMTZiM2M3YzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhdmF0YXIvaW1hZ2UuanBnIiwiaWF0IjoxNzUxNDc3MDI0LCJleHAiOjE3ODMwMTMwMjR9.MuHvlkAF0daOg9qtTFV_PQKlmJzr08veC3auGY9BhF4",
+      bio: "Crypto marketing strategist with 5 years in Web3 and fintech. Worked on token launches, NFT drops, and DeFi growth campaigns. Known for bridging the gap between tech and community.",
       expertise: ["Blockchain Strategy", "Financial Markets", "Business Development"]
     },
     {
-      name: "Sarah Johnson",
+      name: "Kati Chwist",
       role: "CTO",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: "https://wxyzgmayoanzetyuzwvi.supabase.co/storage/v1/object/sign/avatar/image%20(1).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zOWNiMTcwYy04MTc5LTQ0NjgtOTFmNS1iMDVhMTZiM2M3YzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhdmF0YXIvaW1hZ2UgKDEpLmpwZyIsImlhdCI6MTc1MTQ3NzA0NSwiZXhwIjoxNzgzMDEzMDQ1fQ.LP6-qUMOMEdG22bCw5VxJv7NDhHk4iS0l69qgCsTF7M",
       bio: "Ex-Google engineer specializing in distributed systems and smart contract security. PhD in Computer Science.",
       expertise: ["Smart Contracts", "Security Audits", "System Architecture"]
     },
     {
-      name: "Michael Rodriguez",
+      name: "Mark Libscher",
       role: "Head of Marketing",
-      image: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: "https://wxyzgmayoanzetyuzwvi.supabase.co/storage/v1/object/sign/avatar/image%20(3).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zOWNiMTcwYy04MTc5LTQ0NjgtOTFmNS1iMDVhMTZiM2M3YzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhdmF0YXIvaW1hZ2UgKDMpLmpwZyIsImlhdCI6MTc1MTQ3NzA2MiwiZXhwIjoxNzgzMDEzMDYyfQ.DRNvTTRJ0_e5PzlvkPrX0Bw4baqATrWWHV1cdg_quMQ",
       bio: "Marketing veteran with successful campaigns for 100+ crypto projects. Expert in community building and growth.",
       expertise: ["Digital Marketing", "Community Growth", "Brand Strategy"]
     },
     {
-      name: "Emily Zhang",
+      name: "Melinda Szolgyemi",
       role: "Legal & Compliance",
-      image: "https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: "https://wxyzgmayoanzetyuzwvi.supabase.co/storage/v1/object/sign/avatar/image%20(2).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zOWNiMTcwYy04MTc5LTQ0NjgtOTFmNS1iMDVhMTZiM2M3YzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhdmF0YXIvaW1hZ2UgKDIpLmpwZyIsImlhdCI6MTc1MTQ3NzEyMSwiZXhwIjoxNzgzMDEzMTIxfQ.fukNeFTPWorFilPpXPgCPLVVMKo1eSuD646ZVlN3C8E",
       bio: "Crypto law specialist with experience in regulatory compliance across multiple jurisdictions.",
       expertise: ["Regulatory Compliance", "Legal Framework", "Risk Management"]
     }
@@ -205,7 +205,7 @@ const TeamSection: React.FC = () => {
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-800 dark:text-white">support@tokenlaunch.io</div>
+                  <div className="font-semibold text-slate-800 dark:text-white">Connect with Contact Us</div>
                   <div className="text-slate-600 dark:text-slate-300 text-sm">Response within 2 hours</div>
                 </div>
               </div>
@@ -215,7 +215,7 @@ const TeamSection: React.FC = () => {
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-800 dark:text-white">+1 (555) 123-4567</div>
+                  <div className="font-semibold text-slate-800 dark:text-white">+1 (000) 123-4567</div>
                   <div className="text-slate-600 dark:text-slate-300 text-sm">Mon-Fri 9AM-6PM EST</div>
                 </div>
               </div>

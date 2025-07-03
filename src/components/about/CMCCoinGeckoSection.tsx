@@ -5,7 +5,7 @@ const CMCCoinGeckoSection: React.FC = () => {
   const platforms = [
     {
       name: "CoinMarketCap",
-      logo: "https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=200",
+      logo: "https://wxyzgmayoanzetyuzwvi.supabase.co/storage/v1/object/sign/aboutus/unnamed.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zOWNiMTcwYy04MTc5LTQ0NjgtOTFmNS1iMDVhMTZiM2M3YzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhYm91dHVzL3VubmFtZWQucG5nIiwiaWF0IjoxNzUxNDY3NjEwLCJleHAiOjE3ODMwMDM2MTB9.9U_Z7JTrgGniDoNa0h12MAitlS2nAJKKXRNQIe7Lt5o",
       description: "Get listed on the world's most-referenced price-tracking website for cryptocurrencies.",
       features: [
         "Global visibility to millions of users",
@@ -23,7 +23,7 @@ const CMCCoinGeckoSection: React.FC = () => {
     },
     {
       name: "CoinGecko",
-      logo: "https://images.pexels.com/photos/7567526/pexels-photo-7567526.jpeg?auto=compress&cs=tinysrgb&w=200",
+      logo: "https://wxyzgmayoanzetyuzwvi.supabase.co/storage/v1/object/sign/aboutus/CoinGecko_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zOWNiMTcwYy04MTc5LTQ0NjgtOTFmNS1iMDVhMTZiM2M3YzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhYm91dHVzL0NvaW5HZWNrb19sb2dvLnBuZyIsImlhdCI6MTc1MTQ2NzYyOCwiZXhwIjoxNzgzMDAzNjI4fQ.mPphrPfZKW_6HSp6Xtq4eH8wcukz4TT0R0c86N2AN6w",
       description: "Comprehensive cryptocurrency data platform with advanced analytics and market insights.",
       features: [
         "Detailed project analytics",

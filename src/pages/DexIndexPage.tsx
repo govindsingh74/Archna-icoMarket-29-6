@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TrendingUp, TrendingDown, ChevronLeft, ChevronRight, Search, RefreshCw, ExternalLink } from 'lucide-react';
+import { TrendingUp, TrendingDown, ChevronLeft, ChevronRight, Search, RefreshCw, ExternalLink, BarChart3 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -12,6 +12,7 @@ interface TokenData {
   contract_address: string;
   network: string;
   total_supply: string;
+  listing_type: 'free' | 'silver' | 'gold';
 }
 
 interface DexData {
@@ -67,7 +68,7 @@ const DexIndexPage: React.FC = () => {
     try {
       const { data, error } = await supabase
         .from('ico_listings')
-        .select('id, project_name, project_symbol, logo_url, contract_address, network, total_supply')
+        .select('id, project_name, project_symbol, logo_url, contract_address, network, total_supply, listing_type')
         .eq('is_active', true)
         .eq('is_approved', true)
         .order('created_at', { ascending: false });
@@ -100,42 +101,48 @@ const DexIndexPage: React.FC = () => {
       const data = await response.json();
 
       if (data.pairs && data.pairs.length > 0) {
-        const pair = data.pairs[0]; // Choose first match
+        const pair = data.pairs[0]; // take first pair found
         const dexData: DexData = {
           priceUsd: pair.priceUsd || '0',
           priceChange: {
             h1: pair.priceChange?.h1 || 0,
             h24: pair.priceChange?.h24 || 0,
-            h7: pair.priceChange?.h7 || 0 // Note: search API may not return `h7`
+            h7: pair.priceChange?.h7 || 0
           },
           marketCap: pair.marketCap || 0,
           volume: {
             h24: pair.volume?.h24 || 0
           },
           pair: {
-            chartImg: pair.info?.imageUrl || ''
+            chartImg: pair.chartImg || ''
           }
         };
 
-        setTokens(prev => prev.map(t => 
-          t.id === token.id 
-            ? { ...t, dexData, loading: false }
-            : t
-        ));
+        setTokens(prev =>
+          prev.map(t =>
+            t.id === token.id
+              ? { ...t, dexData, loading: false }
+              : t
+          )
+        );
       } else {
-        setTokens(prev => prev.map(t =>
-          t.id === token.id
-            ? { ...t, loading: false, error: 'No data found' }
-            : t
-        ));
+        setTokens(prev =>
+          prev.map(t =>
+            t.id === token.id
+              ? { ...t, loading: false, error: 'No pair found' }
+              : t
+          )
+        );
       }
     } catch (error) {
       console.error(`Error fetching DEX data for ${token.project_symbol}:`, error);
-      setTokens(prev => prev.map(t =>
-        t.id === token.id
-          ? { ...t, loading: false, error: 'Fetch failed' }
-          : t
-      ));
+      setTokens(prev =>
+        prev.map(t =>
+          t.id === token.id
+            ? { ...t, loading: false, error: 'DEX fetch failed' }
+            : t
+        )
+      );
     }
   };
 
@@ -213,6 +220,10 @@ const DexIndexPage: React.FC = () => {
     });
 
     setTimeout(() => setRefreshing(false), 2000);
+  };
+
+  const handleAnalytics = (tokenId: string) => {
+    window.location.href = `/token-analytics/${tokenId}`;
   };
 
   const formatNumber = (num: number, decimals = 2) => {
@@ -431,6 +442,9 @@ const DexIndexPage: React.FC = () => {
                       <th className="px-6 py-4 text-center text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                         7d Chart
                       </th>
+                      <th className="px-6 py-4 text-center text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                        Analytics
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-200 dark:divide-slate-600">
@@ -549,6 +563,19 @@ const DexIndexPage: React.FC = () => {
                             <span className="text-slate-400">-</span>
                           )}
                         </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center">
+                          {(token.listing_type === 'gold' || token.listing_type === 'silver') ? (
+                            <button
+                              onClick={() => handleAnalytics(token.id)}
+                              className="flex items-center gap-1 px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs rounded-lg transition-colors mx-auto"
+                            >
+                              <BarChart3 className="w-3 h-3" />
+                              <span>Analytics</span>
+                            </button>
+                          ) : (
+                            <span className="text-slate-400 text-xs">-</span>
+                          )}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -612,7 +639,7 @@ const DexIndexPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">
-                Live Data based on current DEX prices
+                Live Data Powered by Dexscreener
               </h3>
               <p className="text-slate-600 dark:text-slate-300 text-sm">
                 Real-time cryptocurrency prices and market data. Data refreshes automatically every few minutes.
@@ -623,6 +650,7 @@ const DexIndexPage: React.FC = () => {
                 <span>• 24h Volume</span>
                 <span>• Price Changes</span>
                 <span>• 7d Charts</span>
+                <span>• Analytics (Gold/Silver)</span>
               </div>
             </div>
           </div>
