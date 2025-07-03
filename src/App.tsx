@@ -13,6 +13,7 @@ import NFTIndexPage from './pages/NFTIndexPage';
 import NFTDetailPage from './pages/NFTDetailPage';
 import DexIndexPage from './pages/DexIndexPage';
 import TokenAnalyticsPage from './pages/TokenAnalyticsPage';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/nft/:id" element={<NFTDetailPage />} />
           <Route path="/dex-index" element={<DexIndexPage />} />
           <Route path="/token-analytics/:id" element={<TokenAnalyticsPage />} />
+          <Analytics />
         </Routes>
       </Router>
     </ThemeProvider>
