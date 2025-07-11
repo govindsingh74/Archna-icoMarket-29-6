@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-lg w-full h-full">
                 <img
-                  src="/logoF.png"
+                  src="/logoF-white.png"
                   alt="TokenIndex Logo"
                   className="w-full h-full object-contain"
                 />
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-slate-300">Raise a Request</span>
+                <span className="text-slate-300">support@tokenindex.space</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-blue-400" />

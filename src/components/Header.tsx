@@ -99,7 +99,7 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <img
-                src="/logoF.png"
+                src="/logoF-white.png"
                 alt="TokenLaunch"
                 className="h-8 w-auto"
               />

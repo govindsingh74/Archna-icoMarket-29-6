@@ -130,7 +130,7 @@ const ContactPage: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-slate-800 dark:text-white mb-1">Email Us</h3>
-                      <p className="text-slate-600 dark:text-slate-300">support@tokenlaunch.io</p>
+                      <p className="text-slate-600 dark:text-slate-300">support@tokenindex.space</p>
                       <p className="text-sm text-slate-500 dark:text-slate-400">We'll respond within 24 hours</p>
                     </div>
                   </div>
@@ -153,9 +153,9 @@ const ContactPage: React.FC = () => {
                     <div>
                       <h3 className="font-semibold text-slate-800 dark:text-white mb-1">Visit Us</h3>
                       <p className="text-slate-600 dark:text-slate-300">
-                        123 Blockchain Street<br />
-                        Crypto Valley, CV 12345<br />
-                        United States
+                        We have a team<br />
+                        of peoples <br />
+                        worldwide
                       </p>
                     </div>
                   </div>
