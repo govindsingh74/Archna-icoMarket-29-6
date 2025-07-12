@@ -20,7 +20,7 @@ const AboutUsSection: React.FC = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-500/20 dark:to-purple-500/20">
               <img
-                src="https://wxyzgmayoanzetyuzwvi.supabase.co/storage/v1/object/sign/aboutus/ChatGPT%20Image%20Jul%202,%202025,%2009_40_45%20AM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zOWNiMTcwYy04MTc5LTQ0NjgtOTFmNS1iMDVhMTZiM2M3YzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhYm91dHVzL0NoYXRHUFQgSW1hZ2UgSnVsIDIsIDIwMjUsIDA5XzQwXzQ1IEFNLnBuZyIsImlhdCI6MTc1MTQ2NzI3NiwiZXhwIjoxNzgzMDAzMjc2fQ.YXLLs0NTGKBpP0XZx3AGhop7eGmu7Xj6NV41SiXQL3A"
+                src="https://wxyzgmayoanzetyuzwvi.supabase.co/storage/v1/object/sign/aboutus/submitted.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zOWNiMTcwYy04MTc5LTQ0NjgtOTFmNS1iMDVhMTZiM2M3YzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhYm91dHVzL3N1Ym1pdHRlZC5wbmciLCJpYXQiOjE3NTIzMjczNzksImV4cCI6MTc4Mzg2MzM3OX0.P_uj0rpAON3y4L5507W-WPssR_13IpSM3v_-RE4r6ng"
                 alt="Team collaboration"
                 className="w-full h-full object-cover"
               />
