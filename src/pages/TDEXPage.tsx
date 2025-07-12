@@ -148,7 +148,7 @@ const TDEXPage: React.FC = () => {
                     to="/buy"
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
                   >
-                    <img src="/public/logo.png" alt="Coin Icon" className="w-5 h-5" />
+                    <img src="/logo.png" alt="Coin Icon" className="w-5 h-5" />
                     <span>Buy TDEX</span>
                   </Link>
                   
