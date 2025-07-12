@@ -169,7 +169,7 @@ const TDEXPage: React.FC = () => {
                 <div className="relative w-80 h-80 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-500/20 dark:to-purple-500/20 rounded-full flex items-center justify-center shadow-2xl">
                   <div className="w-64 h-64 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-6xl font-bold">
                     <img
-                    src="/public/logo.png"
+                    src="/logo.png"
                     alt="Shield Icon"
                     className="w-16 h-16 text-blue-600 dark:text-blue-400"
                     />
@@ -456,7 +456,7 @@ const TDEXPage: React.FC = () => {
                     to="/buy"
                     className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-33"
                   >
-                    <img src="/public/logo.png" alt="Coin Icon" className="w-5 h-5" />
+                    <img src="/logo.png" alt="Coin Icon" className="w-5 h-5" />
                     <span>Buy TDEX</span>
                   </Link>
               <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
