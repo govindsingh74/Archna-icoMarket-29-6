@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, MessageCircle, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const TeamSection: React.FC = () => {
   const teamMembers = [
@@ -205,7 +206,7 @@ const TeamSection: React.FC = () => {
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-800 dark:text-white">Connect with Contact Us</div>
+                  <div className="font-semibold text-slate-800 dark:text-white">support@tokenindex.space</div>
                   <div className="text-slate-600 dark:text-slate-300 text-sm">Response within 2 hours</div>
                 </div>
               </div>
@@ -221,9 +222,11 @@ const TeamSection: React.FC = () => {
               </div>
             </div>
             
-            <button className="w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-              Schedule Free Consultation
-            </button>
+            <Link to="/contact">
+              <button className="w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                Schedule Free Consultation
+              </button>
+            </Link>
           </div>
         </div>
       </div>

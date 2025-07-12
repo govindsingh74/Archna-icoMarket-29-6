@@ -13,6 +13,8 @@ import NFTIndexPage from './pages/NFTIndexPage';
 import NFTDetailPage from './pages/NFTDetailPage';
 import DexIndexPage from './pages/DexIndexPage';
 import TokenAnalyticsPage from './pages/TokenAnalyticsPage';
+import TDEXPage from './pages/TDEXPage';
+import BuyTDEXPage from './pages/BuyTDEXPage';
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
           <Route path="/nft/:id" element={<NFTDetailPage />} />
           <Route path="/dex-index" element={<DexIndexPage />} />
           <Route path="/token-analytics/:id" element={<TokenAnalyticsPage />} />
+          <Route path="/tdex" element={<TDEXPage />} />
+          <Route path="/buy" element={<BuyTDEXPage />} />
         </Routes>
       </Router>
     </ThemeProvider>

@@ -99,7 +99,7 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <img
-                src="/logoF-white.png"
+                src="/logoF.png"
                 alt="TokenLaunch"
                 className="h-8 w-auto"
               />
@@ -122,7 +122,7 @@ const Header: React.FC = () => {
                 <img
                   src="/logoF.png"
                   alt="TokenLaunch"
-                  className="h-10 w-auto hover:opacity-80 transition-opacity duration-300"
+                  className="h-8 w-auto hover:opacity-80 transition-opacity duration-300"
                 />
               </a>
             </div>
@@ -162,6 +162,9 @@ const Header: React.FC = () => {
               </div>
               <a href="/about" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
                 About
+              </a>
+              <a href="/tdex" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
+                TDEX
               </a>
               <ThemeToggle />
               
@@ -236,6 +239,9 @@ const Header: React.FC = () => {
                 </div>
                 <a href="/about" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
                   About
+                </a>
+                <a href="/tdex" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
+                  TDEX
                 </a>
                 
                 {user ? (

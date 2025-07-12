@@ -77,7 +77,11 @@ const ReportSection: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 dark:bg-red-500/20 rounded-full mb-6">
-              <Shield className="w-8 h-8 text-red-600 dark:text-red-400" />
+              <img
+                src="/icons/shield.png"
+                alt="Shield Icon"
+                className="w-12 h-12 text-blue-600 dark:text-blue-400"
+              />
             </div>
             <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4">
               Help Us Keep TokenLaunch Safe
@@ -92,7 +96,11 @@ const ReportSection: React.FC = () => {
             {/* Security Features */}
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg text-center">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                <img
+                  src="/icons/web-analytics.png"
+                  alt="Shield Icon"
+                  className="w-10 h-10 text-blue-600 dark:text-blue-400"
+                />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">
                 24/7 Monitoring
@@ -103,8 +111,12 @@ const ReportSection: React.FC = () => {
             </div>
 
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg text-center">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400" />
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <img
+                  src="/icons/project-status.png"
+                  alt="Shield Icon"
+                  className="w-10 h-10 text-blue-600 dark:text-blue-400"
+                />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">
                 Verified Projects
@@ -115,8 +127,12 @@ const ReportSection: React.FC = () => {
             </div>
 
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg text-center">
-              <div className="w-12 h-12 bg-orange-100 dark:bg-orange-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <AlertTriangle className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <img
+                  src="/icons/response.png"
+                  alt="Shield Icon"
+                  className="w-10 h-10 text-blue-600 dark:text-blue-400"
+                />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">
                 Quick Response
