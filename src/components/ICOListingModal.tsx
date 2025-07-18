@@ -496,6 +496,18 @@ const ICOListingModal: React.FC<ICOListingModalProps> = ({ isOpen, onClose }) =>
                 <option value="Polygon (MATIC)">Polygon (MATIC)</option>
                 <option value="Solana (SOL)">Solana (SOL)</option>
                 <option value="Avalanche (AVAX)">Avalanche (AVAX)</option>
+                <option value="Arbitrum (ARB)">Arbitrum (ARB)</option>
+                <option value="Optimism (OP)">Optimism (OP)</option>
+                <option value="Base (BASE)">Base (BASE)</option>
+                <option value="TRON (TRON)">Tron (TRON)</option>
+                <option value="Fantom (FTM)">Fantom (FTM)</option>
+                <option value="Cardano (ADA)">Cardano (ADA)</option>
+                <option value="Polkadot (DOT)">Polkadot (DOT)</option>
+                <option value="Cosmos (ATOM)">Cosmos (ATOM)</option>
+                <option value="Tezos (XTZ)">Tezos (XTZ)</option>
+                <option value="Algorand (ALGO)">Algorand (ALGO)</option>
+                <option value="Near Protocol (NEAR)">Near Protocol (NEAR)</option>
+                <option value="EOS (EOS)">EOS (EOS)</option>
                 <option value="Other">Other</option>
               </select>
             </div>
