@@ -14,6 +14,9 @@ import NFTDetailPage from './pages/NFTDetailPage';
 import DexIndexPage from './pages/DexIndexPage';
 import TokenAnalyticsPage from './pages/TokenAnalyticsPage';
 import TDEXPage from './pages/TDEXPage';
+import AirdropIndexPage from './pages/AirdropIndexPage';
+import AirdropDetailPage from './pages/AirdropDetailPage';
+import CreateAirdropPage from './pages/CreateAirdropPage';
 import BuyTDEXPage from './pages/BuyTDEXPage';
 
 function App() {
@@ -37,6 +40,9 @@ function App() {
           <Route path="/dex-index" element={<DexIndexPage />} />
           <Route path="/token-analytics/:id" element={<TokenAnalyticsPage />} />
           <Route path="/tdex" element={<TDEXPage />} />
+          <Route path="/airdrop-index" element={<AirdropIndexPage />} />
+          <Route path="/airdrop/:id" element={<AirdropDetailPage />} />
+          <Route path="/create-airdrop" element={<CreateAirdropPage />} />
           <Route path="/buy" element={<BuyTDEXPage />} />
         </Routes>
       </Router>

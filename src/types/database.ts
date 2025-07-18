@@ -181,6 +181,109 @@ export interface Database {
           updated_at?: string;
         };
       };
+      airdrops: {
+        Row: {
+          id: string;
+          user_id: string;
+          airdrop_name: string;
+          airdrop_symbol: string;
+          airdrop_description: string;
+          logo_url: string;
+          contract_address: string;
+          token_address: string;
+          total_supply: string | null;
+          airdrop_amount: string;
+          launch_date: string;
+          end_date: string;
+          launch_price: string;
+          network: string;
+          website_url: string | null;
+          twitter_url: string | null;
+          telegram_url: string | null;
+          whitepaper_link: string | null;
+          requirements: string | null;
+          is_active: boolean;
+          is_approved: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          airdrop_name: string;
+          airdrop_symbol: string;
+          airdrop_description: string;
+          logo_url: string;
+          contract_address?: string;
+          token_address?: string;
+          total_supply?: string | null;
+          airdrop_amount: string;
+          launch_date: string;
+          end_date: string;
+          launch_price: string;
+          network?: string;
+          website_url?: string | null;
+          twitter_url?: string | null;
+          telegram_url?: string | null;
+          whitepaper_link?: string | null;
+          requirements?: string | null;
+          is_active?: boolean;
+          is_approved?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          airdrop_name?: string;
+          airdrop_symbol?: string;
+          airdrop_description?: string;
+          logo_url?: string;
+          contract_address?: string;
+          token_address?: string;
+          total_supply?: string | null;
+          airdrop_amount?: string;
+          launch_date?: string;
+          end_date?: string;
+          launch_price?: string;
+          network?: string;
+          website_url?: string | null;
+          twitter_url?: string | null;
+          telegram_url?: string | null;
+          whitepaper_link?: string | null;
+          requirements?: string | null;
+          is_active?: boolean;
+          is_approved?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      airdrop_claims: {
+        Row: {
+          id: string;
+          airdrop_id: string;
+          wallet_address: string;
+          amount_claimed: string;
+          transaction_hash: string;
+          claimed_at: string;
+        };
+        Insert: {
+          id?: string;
+          airdrop_id: string;
+          wallet_address: string;
+          amount_claimed: string;
+          transaction_hash: string;
+          claimed_at?: string;
+        };
+        Update: {
+          id?: string;
+          airdrop_id?: string;
+          wallet_address?: string;
+          amount_claimed?: string;
+          transaction_hash?: string;
+          claimed_at?: string;
+        };
+      };
       ico_listings: {
         Row: {
           id: string;

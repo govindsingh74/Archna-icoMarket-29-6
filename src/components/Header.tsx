@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, LogOut, User, Palette, TrendingUp } from 'lucide-react';
+import { Menu, X, LogOut, User, Palette, TrendingUp, Gift } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import ThemeToggle from './ThemeToggle';
 import AuthModal from './AuthModal';
@@ -163,6 +163,20 @@ const Header: React.FC = () => {
               <a href="/about" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
                 About
               </a>
+              <div className="relative group">
+                <button className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
+                  <Gift className="w-4 h-4" />
+                  <span>Airdrop</span>
+                </button>
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200/50 dark:border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <a href="/airdrop-index" className="block px-4 py-3 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                    View Airdrops
+                  </a>
+                  <a href="/create-airdrop" className="block px-4 py-3 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                    Create Airdrop
+                  </a>
+                </div>
+              </div>
               <a href="/tdex" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
                 TDEX
               </a>
@@ -235,6 +249,14 @@ const Header: React.FC = () => {
                 <div className="pl-4 space-y-2">
                   <a href="/dex-index" className="block text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
                     DEX Index
+                  </a>
+                </div>
+                <div className="pl-4 space-y-2">
+                  <a href="/airdrop-index" className="block text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
+                    View Airdrops
+                  </a>
+                  <a href="/create-airdrop" className="block text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
+                    Create Airdrop
                   </a>
                 </div>
                 <a href="/about" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
