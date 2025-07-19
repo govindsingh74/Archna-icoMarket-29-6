@@ -387,8 +387,8 @@ const DexIndexPage: React.FC = () => {
         </section>
 
         {/* DEX Table */}
-        <section className="py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-0">
+          <div className="w-full ">
             <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
