@@ -133,12 +133,12 @@ const Header: React.FC = () => {
                 Home
               </a>
               <a href="/ico" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
-                ICO
+                Crypto
               </a>
               <div className="relative group">
                 <button className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
                   <Palette className="w-4 h-4" />
-                  <span>NFT</span>
+                  <span>NFT's</span>
                 </button>
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200/50 dark:border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                   <a href="/nft-index" className="block px-4 py-3 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
@@ -236,7 +236,7 @@ const Header: React.FC = () => {
                   Home
                 </a>
                 <a href="/ico" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
-                  ICO
+                  Token Index
                 </a>
                 <div className="pl-4 space-y-2">
                   <a href="/nft-index" className="block text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
