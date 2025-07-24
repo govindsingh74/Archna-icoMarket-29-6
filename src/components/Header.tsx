@@ -158,6 +158,9 @@ const Header: React.FC = () => {
                   <a href="/dex-index" className="block px-4 py-3 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
                     DEX Index
                   </a>
+                  <a href="/uniswap-index" className="block text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
+                    UNISWAP Index
+                  </a>
                 </div>
               </div>
               <a href="/about" className="text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
@@ -249,6 +252,9 @@ const Header: React.FC = () => {
                 <div className="pl-4 space-y-2">
                   <a href="/dex-index" className="block text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
                     DEX Index
+                  </a>
+                  <a href="/uniswap-index" className="block text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300">
+                    UNISWAP Index
                   </a>
                 </div>
                 <div className="pl-4 space-y-2">

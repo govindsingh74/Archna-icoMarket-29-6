@@ -18,6 +18,7 @@ import AirdropIndexPage from './pages/AirdropIndexPage';
 import AirdropDetailPage from './pages/AirdropDetailPage';
 import CreateAirdropPage from './pages/CreateAirdropPage';
 import BuyTDEXPage from './pages/BuyTDEXPage';
+import UniswapIndexPage from './pages/UniswapIndexPage';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/airdrop/:id" element={<AirdropDetailPage />} />
           <Route path="/create-airdrop" element={<CreateAirdropPage />} />
           <Route path="/buy" element={<BuyTDEXPage />} />
+          <Route path="/uniswap-index" element={<UniswapIndexPage />} />
         </Routes>
       </Router>
     </ThemeProvider>
