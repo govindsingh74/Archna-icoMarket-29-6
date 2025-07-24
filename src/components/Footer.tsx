@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://x.com/tokenindexP"
+                href="https://x.com/tokendexP"
                 target="_blank"
                 className="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors group"
               >
