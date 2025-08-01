@@ -7,7 +7,7 @@ const CostEffectiveSection: React.FC = () => {
       icon: DollarSign,
       title: "Low Listing Fees",
       description: "Starting from free listings to premium packages, we offer the most competitive rates in the industry.",
-      price: "From $0",
+      price: "From $100",
       features: ["Basic listing included", "No hidden fees", "Transparent pricing"]
     },
     {
@@ -28,8 +28,9 @@ const CostEffectiveSection: React.FC = () => {
 
   const pricingTiers = [
     {
-      name: "Free",
-      price: "$0",
+      name: "Base",
+      offer: "(Get 75% off For August-25)",
+      price: "$100",
       description: "Perfect for startups and early-stage projects",
       features: [
         "Basic project listing",
@@ -153,6 +154,9 @@ const CostEffectiveSection: React.FC = () => {
                   <div className="text-3xl font-bold text-slate-800 dark:text-white mb-2">
                     {tier.price}
                   </div>
+                  <div className="text-xl font-bold text-slate-800 dark:text-white mb-2">
+                    {tier.offer}
+                  </div>
                   <p className="text-slate-600 dark:text-slate-300 text-sm">
                     {tier.description}
                   </p>
@@ -197,11 +201,11 @@ const CostEffectiveSection: React.FC = () => {
               <div className="text-slate-600 dark:text-slate-300">Average ROI</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">$50M+</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">$5.40M+</div>
               <div className="text-slate-600 dark:text-slate-300">Funds Raised</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">500+</div>
+              <div className="text-3xl font-bold text-purple-600 mb-2">84+</div>
               <div className="text-slate-600 dark:text-slate-300">Successful Projects</div>
             </div>
           </div>

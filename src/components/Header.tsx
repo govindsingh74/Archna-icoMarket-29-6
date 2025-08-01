@@ -3,6 +3,7 @@ import { Menu, X, LogOut, User, Palette, TrendingUp, Gift } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import ThemeToggle from './ThemeToggle';
 import AuthModal from './AuthModal';
+import { User as SupabaseUser } from '@supabase/supabase-js';
 
 interface UserProfile {
   id: string;
@@ -87,7 +88,8 @@ const Header: React.FC = () => {
     setIsAuthModalOpen(true);
   };
 
-  const handleAuthSuccess = (user: any) => {
+
+  const handleAuthSuccess = (user: SupabaseUser) => {
     setUser(user);
     setIsAuthModalOpen(false);
   };
